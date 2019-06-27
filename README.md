@@ -1,5 +1,5 @@
 # StandModelLib
-Lightweight and Optimized ArmorStand model spawner for Spigot
+Lightweight and Optimized ArmorStand Command parser and model spawner/manager for Spigot
 
 ---
 ## Website Model Creator

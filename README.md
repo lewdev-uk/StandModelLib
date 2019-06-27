@@ -1,7 +1,9 @@
 # StandModelLib
 Lightweight and Optimized ArmorStand Command parser and model spawner/manager for SpigotMC Minecraft server software.
 
-![](stands.gif)
+<p align="center">
+  <img src="stands.gif">
+</p>
 
 ---
 ## Website Model Creator

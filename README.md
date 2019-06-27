@@ -18,4 +18,20 @@ Supports models generated from https://mrgarretto.com/armorstand/ <b>version 1.1
 Comming soon!
 
 ## Maven
-Coming soon!
+Add this repository to you pom.xml:
+```
+<repositories>
+		<repository>
+		    <id>jitpack.io</id>
+		    <url>https://jitpack.io</url>
+		</repository>
+	</repositories>
+```
+Finally add this dependency:
+```
+	<dependency>
+	    <groupId>com.github.lewysDavies</groupId>
+	    <artifactId>StandModelLib</artifactId>
+	    <version>1</version>
+	</dependency>
+```

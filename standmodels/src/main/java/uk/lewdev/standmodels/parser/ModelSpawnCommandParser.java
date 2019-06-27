@@ -20,13 +20,13 @@ import uk.lewdev.standmodels.utils.UMaterial;
  * summon commands from a specific string. It is not a full command parser. I
  * use Regex to extract the data we need through out the process.
  */
-public class StandSpawnCommandParser {
+public class ModelSpawnCommandParser {
 
 	private String command;
 
 	List<ModelBuildInstruction> instructions;
 
-	public StandSpawnCommandParser(String command) {
+	public ModelSpawnCommandParser(String command) {
 		this.command = command;
 		this.instructions = this.parse();
 	}

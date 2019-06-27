@@ -5,7 +5,7 @@
 
 	<groupId>uk.lewdev</groupId>
 	<artifactId>standmodels</artifactId>
-	<version>0.1</version>
+	<version>1</version>
 	<packaging>jar</packaging>
 
 	<name>StandModels</name>
@@ -15,7 +15,6 @@
 		<pl.ver>1.3.7</pl.ver>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
-
 
 	<repositories>
 		<!-- Spigot repo -->
@@ -36,7 +35,7 @@
 	</dependencies>
 
 	<build>
-		<finalName>Zone-API</finalName>
+		<finalName>StandModelsLib</finalName>
 		<plugins>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
@@ -72,6 +71,70 @@
 					<outputDirectory>C:/Users/Lewys/Documents/Development/server/plugins</outputDirectory>
 				</configuration>
 			</plugin>
+			<plugin>
+				<artifactId>maven-deploy-plugin</artifactId>
+				<version>2.8.2</version>
+				<executions>
+					<execution>
+						<id>default-deploy</id>
+						<phase>deploy</phase>
+						<goals>
+							<goal>deploy</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
 		</plugins>
 	</build>
+
+	<scm>
+		<connection>scm:git:git://github.com/lewysDavies/StandModelLib.git</connection>
+		<url>https://github.com/lewysDavies/StandModelLib</url>
+		<tag>HEAD</tag>
+	</scm>
+
+	<distributionManagement>
+		<snapshotRepository>
+			<id>ossrh</id>
+			<url>https://oss.sonatype.org/content/repositories/snapshots</url>
+		</snapshotRepository>
+
+		<repository>
+			<id>ossrh</id>
+			<url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+		</repository>
+	</distributionManagement>
+
+	<profiles>
+		<!-- GPG Signature on release -->
+		<profile>
+			<id>release-sign-artifacts</id>
+			<activation>
+				<property>
+					<name>performRelease</name>
+					<value>true</value>
+				</property>
+			</activation>
+			<build>
+				<plugins>
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-gpg-plugin</artifactId>
+						<version>${version.maven-gpg-plugin}</version>
+						<executions>
+							<execution>
+								<id>sign-artifacts</id>
+								<phase>verify</phase>
+								<goals>
+									<goal>sign</goal>
+								</goals>
+							</execution>
+						</executions>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
+	</profiles>
+
+
 </project>

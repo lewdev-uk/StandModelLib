@@ -1,6 +1,8 @@
 # StandModelLib
 Lightweight and Optimized ArmorStand Command parser and model spawner/manager for SpigotMC Minecraft server software.
 
+![](https://i.gyazo.com/047498b97cfa96f822cddeb86dbaa236.gif)
+
 ---
 ## Website Model Creator
 Supports models generated from https://mrgarretto.com/armorstand/ <b>version 1.12</b> only

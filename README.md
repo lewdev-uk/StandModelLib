@@ -1,7 +1,8 @@
-# StandModelLib
+#StandModelLib
 Lightweight and Optimized ArmorStand model spawner for Spigot
+
 ---
-#H1 Website Model Creator
+## Website Model Creator
 Supports models generated from https://mrgarretto.com/armorstand/ <b>version 1.12</b> only
 
 **Important Note:** When using the website - The following limitations apply:

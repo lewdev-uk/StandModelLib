@@ -33,3 +33,5 @@ Finally add this dependency:
     <version>1</version>
 </dependency>
 ```
+## With Thanks
+Massive thanks to Spigot user [RandomHashTags](https://www.spigotmc.org/members/randomhashtags.76364/) for the amazing resource [Universal Material](https://www.spigotmc.org/threads/universal-material-names.349115/)

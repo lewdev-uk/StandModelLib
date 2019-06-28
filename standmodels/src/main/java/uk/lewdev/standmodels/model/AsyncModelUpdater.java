@@ -45,12 +45,12 @@ public class AsyncModelUpdater extends BukkitRunnable {
 					m.setPlayerInRenderDistance(true);
 				}
 
-				if (m.shouldAnimate() && distance <= m.getAnimationDistance()) {
+				if (m.isAnimated() && distance <= m.getAnimationDistance()) {
 					playerInAnimDis.add(player);
 				}
 			}
 			
-			if(m.shouldAnimate()) {
+			if(m.isAnimated()) {
 				m.setPlayersInAnimationDistance(playerInAnimDis);
 			}
 		}

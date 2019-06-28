@@ -66,6 +66,10 @@ public class Model {
 	public void setAnimated(boolean animated) {
 		this.isAnimated = animated;
 	}
+	
+	public boolean isAnimated() {
+		return this.isAnimated;
+	}
 
 	public boolean isRendered() {
 		return (this.stands != null && !this.stands.isEmpty());

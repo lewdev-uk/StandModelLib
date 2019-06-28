@@ -97,9 +97,9 @@ public class Model {
 	public void setCenter(Location loc) {
 		loc = loc.clone();
 		
-		double xDiff = this.center.getX() - loc.getX();
-		double yDiff = this.center.getY() - loc.getY();
-		double zDiff = this.center.getZ() - loc.getZ();
+		double xDiff = loc.getX() - this.center.getX();
+		double yDiff = loc.getY() - this.center.getY();
+		double zDiff = loc.getZ() - this.center.getZ();
 		
 		this.stands.stream().forEach(stand -> {
 			stand.teleport(stand.getLocation().add(xDiff, yDiff, zDiff));

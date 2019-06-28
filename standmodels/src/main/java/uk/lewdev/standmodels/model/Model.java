@@ -62,6 +62,10 @@ public class Model {
 	public void animationTick(HashSet<Player> playersInAnimationDistance) {
 		return;
 	}
+	
+	public void setAnimated(boolean animated) {
+		this.isAnimated = animated;
+	}
 
 	public boolean isRendered() {
 		return (this.stands != null && !this.stands.isEmpty());

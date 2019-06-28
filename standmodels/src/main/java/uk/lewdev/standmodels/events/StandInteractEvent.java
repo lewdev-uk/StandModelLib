@@ -24,22 +24,31 @@ public class StandInteractEvent implements Listener {
 
 	@EventHandler
 	public void onStandManip(PlayerArmorStandManipulateEvent event) {
-		this.handleInteract(event.getRightClicked(), event.getPlayer());
+		event.setCancelled(this.handleInteract(event.getRightClicked(), event.getPlayer()));
 	}
 
 	@EventHandler
 	public void onStandInteract(PlayerInteractEntityEvent event) {
-		this.handleInteract(event.getRightClicked(), event.getPlayer());
+		
+		event.setCancelled(this.handleInteract(event.getRightClicked(), event.getPlayer()));
 	}
 
-	protected void handleInteract(Entity e, Player p) {
+	/**
+	 * 
+	 * @param e
+	 * @param p
+	 * @return True if event should cancel, else False.
+	 */
+	protected boolean handleInteract(Entity e, Player p) {
 		if (e instanceof ArmorStand && e.getName().equals(ModelBuildInstruction.MODEL_PART_NAME)) {
 			ArmorStand stand = (ArmorStand) e;
 			Model m = this.lib.getModelManager().getModel(stand);
 			if (m != null) {
 				ModelInteractEvent event = new ModelInteractEvent(m, p);
 				Bukkit.getPluginManager().callEvent(event);
+				return ! m.isItemsTakeable();
 			}
 		}
+		return false;
 	}
 }

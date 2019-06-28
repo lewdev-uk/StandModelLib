@@ -177,7 +177,7 @@ public class Model {
 		this.instructions.forEach(ins -> this.stands.add(ins.spawnStand(this.center.clone(), this.rotation)));
 	}
 
-	protected final void unRender() {
+	public final void unRender() {
 		if (!this.isRendered()) {
 			return;
 		}

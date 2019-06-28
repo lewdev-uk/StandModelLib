@@ -104,7 +104,7 @@ public class StandModelLib {
 		this.events.forEach(event -> HandlerList.unregisterAll(event));
 		this.events = null;
 
-		this.modelManager.getModels().forEach(model -> this.getModelManager().removeModel(model));
+		this.modelManager.getModels().forEach(model -> model.unRender());
 		this.modelManager = null;
 	}
 

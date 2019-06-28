@@ -100,7 +100,7 @@ public class Model {
 		double zDiff = this.center.getZ() - loc.getZ();
 		
 		this.stands.stream().forEach(stand -> {
-			stand.teleport(this.center.clone().add(xDiff, yDiff, zDiff));
+			stand.teleport(stand.getLocation().add(xDiff, yDiff, zDiff));
 		});
 		
 		this.center = loc;

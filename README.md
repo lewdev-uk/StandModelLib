@@ -15,7 +15,7 @@ Supports models generated from https://mrgarretto.com/armorstand/ <b>version 1.1
 * When loading from a config, ensure the command is on the same line and encapsulated in ' '
 
 ## Example Usage
-Comming soon!
+https://github.com/lewdev-uk/StandModelLib-Example
 
 ## Maven
 Add this repository to you pom.xml:
@@ -30,7 +30,7 @@ Finally add this dependency:
 <dependency>
     <groupId>uk.lewdev</groupId>
     <artifactId>StandModelLib</artifactId>
-    <version>0.1</version>
+    <version>0.5</version>
 </dependency>
 ```
 ## With Thanks

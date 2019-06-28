@@ -28,9 +28,9 @@ Add this repository to you pom.xml:
 Finally add this dependency:
 ```
 <dependency>
-    <groupId>com.github.lewysDavies</groupId>
+    <groupId>uk.lewdev</groupId>
     <artifactId>StandModelLib</artifactId>
-    <version>1</version>
+    <version>0.1</version>
 </dependency>
 ```
 ## With Thanks

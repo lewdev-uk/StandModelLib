@@ -87,7 +87,7 @@ public class Model {
 	}
 
 	public Location getCenter() {
-		return this.center;
+		return this.center.clone();
 	}
 	
 	public void setCenter(Location loc) {

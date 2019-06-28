@@ -85,6 +85,18 @@ public class Model {
 	public Location getCenter() {
 		return this.center;
 	}
+	
+	public void setCenter(Location loc) {
+		double xDiff = this.center.getX() - loc.getX();
+		double yDiff = this.center.getY() - loc.getY();
+		double zDiff = this.center.getZ() - loc.getZ();
+		
+		this.stands.stream().forEach(stand -> {
+			stand.teleport(this.center.clone().add(xDiff, yDiff, zDiff));
+		});
+		
+		this.center = loc;
+	}
 
 	public Long getLastUpdated() {
 		return this.lastUpdate;

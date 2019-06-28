@@ -18,4 +18,20 @@ Supports models generated from https://mrgarretto.com/armorstand/ <b>version 1.1
 Comming soon!
 
 ## Maven
-Coming soon!
+Add this repository to you pom.xml:
+```
+<repository>
+    <id>jitpack.io</id>
+    <url>https://jitpack.io</url>
+</repository>
+```
+Finally add this dependency:
+```
+<dependency>
+    <groupId>uk.lewdev</groupId>
+    <artifactId>StandModelLib</artifactId>
+    <version>0.1</version>
+</dependency>
+```
+## With Thanks
+Massive thanks to Spigot user [RandomHashTags](https://www.spigotmc.org/members/randomhashtags.76364/) for the amazing resource [Universal Material](https://www.spigotmc.org/threads/universal-material-names.349115/)

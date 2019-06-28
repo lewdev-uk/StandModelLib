@@ -77,6 +77,7 @@ public class StandModelLib {
 
 	private void initEvents() {
 		StandInteractEvent event = new StandInteractEvent(this);
+		Bukkit.getPluginManager().registerEvents(event, this.plugin);
 		this.events.add(event);
 	}
 

@@ -7,13 +7,22 @@ Lightweight and Optimized ArmorStand Command parser and model spawner/manager fo
 
 ---
 ## Website Model Creator
-Supports models generated from https://mrgarretto.com/armorstand/ <b>version 1.12</b> only
+Supports models generated from  <b>version 1.12</b> only
 
 **Important Note:** When using the website - The following limitations apply:
 * You may and only use "Medium" or "Large" pieces. That means NO part can be "Small" or "Solid" otherwise it will break.
 * The command must be generated using the "Single" option.
 * When loading from a config, ensure the command is on the same line and encapsulated in ' '
 * Models must be centered on the website before being generated. Otherwise they will not spawn in centered.
+
+## Features
+* Ability to parse model creation commands (that normal go into command blocks) from v1.12 https://mrgarretto.com/armorstand/
+* Model rotation around central position
+* Highly Optimised:
+  *  Render distance to remove un-needed ArmorStands
+  *  Animation distance to only display animations when a player is near-by
+  *  Player being within Render or Animation distance is updated asynchronous
+* Custom Model Interaction event
 
 ## Example Usage
 https://github.com/lewdev-uk/StandModelLib-Example

@@ -16,7 +16,7 @@ Supports models generated from https://mrgarretto.com/armorstand/ <b>version 1.1
 * Models must be centered on the website before being generated. Otherwise they will not spawn in centered.
 
 ## Features
-* Ability to parse model creation commands (that normal go into command blocks) from v1.12 https://mrgarretto.com/armorstand/
+* Ability to parse model creation commands (that normally go into command blocks) from v1.12 https://mrgarretto.com/armorstand/
 * Model rotation around central position
 * Highly Optimised:
   *  Render distance to remove un-needed ArmorStands

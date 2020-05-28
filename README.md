@@ -38,7 +38,7 @@ Add this repository to you pom.xml:
 Finally add this dependency:
 ```
 <dependency>
-    <groupId>uk.lewdev</groupId>
+    <groupId>com.github.lewysDavies</groupId>
     <artifactId>StandModelLib</artifactId>
     <version>master-SNAPSHOT</version>
 </dependency>

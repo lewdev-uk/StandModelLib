@@ -30,9 +30,9 @@ public class AsyncModelUpdater extends BukkitRunnable {
 			Location center = model.getCenter();
 
 			for (Player player : center.getWorld().getPlayers()) {
-				double distance = player.getLocation().distanceSquared(model.getCenter());
+				double distance = player.getLocation().distance(model.getCenter());
 
-				if (distance <= square(model.getRenderDistance())) {
+				if (distance <= model.getRenderDistance()) {
 					model.setPlayerInRenderDistance(true);
 					break;
 				}
@@ -46,13 +46,13 @@ public class AsyncModelUpdater extends BukkitRunnable {
 			Location center = model.getCenter();
 
 			for (Player player : center.getWorld().getPlayers()) {
-				double distance = player.getLocation().distanceSquared(model.getCenter());
+				double distance = player.getLocation().distance(model.getCenter());
 
-				if (distance <= square(model.getRenderDistance())) {
+				if (distance <= model.getRenderDistance()) {
 					model.setPlayerInRenderDistance(true);
 				}
 				
-				if (distance <= square(model.getAnimationDistance())) {
+				if (distance <= model.getAnimationDistance()) {
 					model.addPlayerInAnimDistance(player);
 				}
 			}
@@ -65,9 +65,5 @@ public class AsyncModelUpdater extends BukkitRunnable {
 			
 			this.inTick = false;
 		});
-	}
-	
-	protected double square(double num) {
-		return num*num;
 	}
 }

@@ -29,7 +29,6 @@ public class StandInteractEvent implements Listener {
 
 	@EventHandler
 	public void onStandInteract(PlayerInteractEntityEvent event) {
-		
 		event.setCancelled(this.handleInteract(event.getRightClicked(), event.getPlayer()));
 	}
 

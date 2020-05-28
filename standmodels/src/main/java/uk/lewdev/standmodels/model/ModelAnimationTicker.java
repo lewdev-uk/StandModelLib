@@ -20,8 +20,7 @@ public class ModelAnimationTicker extends BukkitRunnable {
 
 		this.inTick = true;
 
-		this.lib.getModelManager().getModels().stream()
-			.filter (model -> model.shouldAnimate())
+		this.lib.getModelManager().getAnimatedModels()
 			.forEach(model -> model.doAnimationTick());
 		
 		this.inTick = false;

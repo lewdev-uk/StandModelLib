@@ -95,7 +95,7 @@ public class StandModelLib {
 
 	/**
 	 * Stop all tasks and unregister all events.
-	 * Then removes all stands from the world.
+	 * Then removes all models from the server.
 	 */
 	public void destroy() {
 		this.tasks.forEach(task -> task.cancel());
@@ -104,7 +104,8 @@ public class StandModelLib {
 		this.events.forEach(event -> HandlerList.unregisterAll(event));
 		this.events = null;
 
-		this.modelManager.getModels().forEach(model -> model.unRender());
+		this.modelManager.getStaticModels().forEach(model -> model.unRender());
+		this.modelManager.getAnimatedModels().forEach(model -> model.unRender());
 		this.modelManager = null;
 	}
 

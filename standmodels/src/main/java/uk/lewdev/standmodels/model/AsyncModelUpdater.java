@@ -1,8 +1,5 @@
 package uk.lewdev.standmodels.model;
 
-import java.util.HashSet;
-import java.util.List;
-
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.entity.Player;
@@ -10,9 +7,6 @@ import org.bukkit.scheduler.BukkitRunnable;
 
 import uk.lewdev.standmodels.StandModelLib;
 
-/**
- * 
- */
 public class AsyncModelUpdater extends BukkitRunnable {
 	
 	private StandModelLib lib;
@@ -29,34 +23,29 @@ public class AsyncModelUpdater extends BukkitRunnable {
 
 		this.inTick = true;
 
-		List<Model> models = this.lib.getModelManager().getModels();
-
-		for (Model m : models) {
-			Location center = m.getCenter();
-
-			m.setPlayerInRenderDistance(false);
-
-			HashSet<Player> playerInAnimDis = new HashSet<Player>();
+		this.lib.getModelManager().getModels().forEach(model -> {
+			model.resetForUpdate();
+			Location center = model.getCenter();
 
 			for (Player player : center.getWorld().getPlayers()) {
-				double distance = player.getLocation().distance(m.getCenter());
+				if(player.getWorld() != model.getCenter().getWorld()) {
+					continue;
+				}
+				
+				double distance = player.getLocation().distanceSquared(model.getCenter());
 
-				if (distance <= m.getRenderDistance()) {
-					m.setPlayerInRenderDistance(true);
+				if (distance <= model.getRenderDistance()) {
+					model.setPlayerInRenderDistance(true);
 				}
 
-				if (m.isAnimated() && distance <= m.getAnimationDistance()) {
-					playerInAnimDis.add(player);
+				if (model.isAnimated() && distance <= model.getAnimationDistance()) {
+					model.addPlayerInAnimDistance(player);
 				}
 			}
-			
-			if(m.isAnimated()) {
-				m.setPlayersInAnimationDistance(playerInAnimDis);
-			}
-		}
+		});
 
 		Bukkit.getScheduler().runTask(lib.getPlugin(), () -> {
-			for (Model m : models) {
+			for (Model m : this.lib.getModelManager().getModels()) {
 				m.updateTick();
 			}
 			

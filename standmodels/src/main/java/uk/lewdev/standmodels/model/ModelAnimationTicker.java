@@ -1,7 +1,5 @@
 package uk.lewdev.standmodels.model;
 
-import java.util.List;
-
 import org.bukkit.scheduler.BukkitRunnable;
 
 import uk.lewdev.standmodels.StandModelLib;
@@ -22,13 +20,9 @@ public class ModelAnimationTicker extends BukkitRunnable {
 
 		this.inTick = true;
 
-		List<Model> models = this.lib.getModelManager().getModels();
-		
-		for (Model m : models) {
-			if(m.shouldAnimate()) {
-				m.animationTick();
-			}
-		}
+		this.lib.getModelManager().getModels().stream()
+			.filter (model -> model.shouldAnimate())
+			.forEach(model -> model.doAnimationTick());
 		
 		this.inTick = false;
 	}

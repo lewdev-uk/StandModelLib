@@ -21,12 +21,11 @@ public class Model {
 
 	private long lastUpdate = System.currentTimeMillis(); // TimeMillis
 
+	private final List<ModelBuildInstruction> instructions;
 	private HashSet<ArmorStand> stands = new HashSet<>();
 
 	private boolean playerInRenderDistance = false;
-	private HashSet<Player> playersInAnimationDistance = new HashSet<>();
-
-	private final List<ModelBuildInstruction> instructions;
+	protected HashSet<Player> playersInAnimationDistance = new HashSet<>();
 	
 	private boolean itemsTakeable;
 	private boolean isAnimated;
@@ -56,10 +55,8 @@ public class Model {
 	/**
 	 * User can override this method to update the animation, if there is one.
 	 * This method will only be called if a player is within the animation distance.
-	 * 
-	 * @param playersInAnimationDistance List of players who are within the animation distance
 	 */
-	public void animationTick(HashSet<Player> playersInAnimationDistance) {
+	protected void doAnimationTick() {
 		return;
 	}
 	
@@ -143,9 +140,22 @@ public class Model {
 	protected final void setPlayerInRenderDistance(boolean withinDistance) {
 		this.playerInRenderDistance = withinDistance;
 	}
-
-	protected final void setPlayersInAnimationDistance(HashSet<Player> playersInAnimationDistance) {
-		this.playersInAnimationDistance = playersInAnimationDistance;
+	
+	/**
+	 * Reset the players within animation and render distance, ready
+	 * to be updated again by {@link AsyncModelUpdater}
+	 */
+	protected final void resetForUpdate() {
+		this.playersInAnimationDistance.clear();
+		this.playerInRenderDistance = false;
+	}
+	
+	protected final void addPlayerInAnimDistance(Player player) {
+		this.playersInAnimationDistance.add(player);
+	}
+	
+	protected final HashSet<Player> getPlayersInAnimDistance() {
+		return this.playersInAnimationDistance;
 	}
 
 	protected final void updateTick() {
@@ -158,13 +168,6 @@ public class Model {
 
 		else if (!this.shouldRender() && this.isRendered()) {
 			this.unRender();
-		}
-	}
-	
-	protected final void animationTick() {
-		// Animation Update
-		if (this.shouldAnimate()) {
-			this.animationTick(this.playersInAnimationDistance);
 		}
 	}
 

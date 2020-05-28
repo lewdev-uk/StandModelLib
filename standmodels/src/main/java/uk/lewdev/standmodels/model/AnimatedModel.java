@@ -56,4 +56,8 @@ public class AnimatedModel extends Model {
 	protected final void clearPlayersInAnimDistance() {
 		this.playersInAnimationDistance.clear();
 	}
+	
+	protected final boolean shouldAnimate() {
+		return ! this.playersInAnimationDistance.isEmpty();
+	}
 }

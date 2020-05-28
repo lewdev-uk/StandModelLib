@@ -23,8 +23,8 @@ public class AnimatedModel extends Model {
 	private HashSet<Player> playersInAnimationDistance = new HashSet<>();
 
 	public AnimatedModel(List<ModelBuildInstruction> ins, Location center, Axis facing, Axis desired,
-			double renderDistance, double animationDistance) {
-		super(ins, center, facing, desired, renderDistance, false);
+			double renderDistance, double animationDistance, boolean itemsTakeable) {
+		super(ins, center, facing, desired, renderDistance, itemsTakeable);
 
 		this.animationDistance = animationDistance;
 	}

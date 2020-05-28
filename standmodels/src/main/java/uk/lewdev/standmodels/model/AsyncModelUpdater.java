@@ -32,7 +32,7 @@ public class AsyncModelUpdater extends BukkitRunnable {
 					continue;
 				}
 				
-				double distance = player.getLocation().distanceSquared(model.getCenter());
+				double distance = player.getLocation().distance(model.getCenter());
 
 				if (distance <= model.getRenderDistance()) {
 					model.setPlayerInRenderDistance(true);

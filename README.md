@@ -40,7 +40,7 @@ Finally add this dependency:
 <dependency>
     <groupId>uk.lewdev</groupId>
     <artifactId>StandModelLib</artifactId>
-    <version>0.5</version>
+    <version>master-SNAPSHOT</version>
 </dependency>
 ```
 ## With Thanks

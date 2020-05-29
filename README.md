@@ -7,7 +7,7 @@ Lightweight and Optimized ArmorStand Command parser and model spawner/manager fo
 
 ---
 ## Website Model Creator
-Supports models generated from https://mrgarretto.com/armorstand/ <b>version 1.12</b> only
+Supports models generated from https://mrgarretto.com/armorstand/ <b>version 1.12</b> only. However, I see no reason why it would be tied to any specific Minecraft version. The limitation is with the mrgarretto command string & materials parser and and not with Spigot versions.
 
 **Important Note:** When using the website - The following limitations apply:
 * You may and only use "Medium" or "Large" pieces. That means NO part can be "Small" or "Solid" otherwise it will break.
